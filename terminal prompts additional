@@ -1,0 +1,62 @@
+define the path accurately
+
+
+Step 1: 
+       npm init -y
+
+
+Step 2:
+       npm install -D tailwindcss
+
+
+Step 3:
+       npm i tailwindcss@3 postcss autoprefixer   -  to use older version
+
+
+Step 4:
+       npx tailwindcss init
+
+
+
+Step 5: 
+       create src folder and create input.css file and src folder
+
+
+Step 6:
+       in tailwind.config.js file, contentshould be: ["*.html"]
+
+
+Step 7:
+       npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+Step 8:
+      link output.css file to html which is created:
+       "link rel="stylesheet" href="./src/input.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additional :
+
+
+            ****
+            1.  inspect
+
+            2. console
+
+            3. document.designMode="on"
+
+To temporarily change the design on context of any website 
+
+we can even edit the text and do many other things
