@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter-pip.3.ico">
+    <link rel="stylesheet" href="./src/output.css">
+
+
+</head>
+
+<body class="bg-black text-white">
+    <div class="flex md:container mx-auto my-4">
+        <div class="first w-16 md:w-[70%]">
+            <div class="logo invert my-4 mr-48 sticky top-0">
+                <svg viewBox="0 0 24 24" aria-hidden="true"
+                    class="cursor-pointer w-10 m-auto r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                    <g>
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                        </path>
+                    </g>
+                </svg>
+
+            </div>
+            <div class="sidebar flex md:items-end flex-col sticky top-[8vh]">
+                <ul class="flex flex-col text-2xl space-y-0.5 mr-4  md:px-11 font-bold w-full">
+                    <li
+                        class="flex md:justify-start items-center gap-2  justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <span material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path
+                                    d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                            </svg>
+
+                        </span> <span class="hidden md:block">Home</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg> <span class="hidden md:block">Explore</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+                        </svg> <span class="hidden md:block">Notifications</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                        </svg> <span class="hidden md:block">Messages</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg fill="currentColor" fill-rule="evenodd" height="24" style="flex:none;line-height:1"
+                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <title>Grok</title>
+                            <path
+                                d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815">
+                            </path>
+                        </svg> <span class="hidden md:block">Grok</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl mr-1 hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z" />
+                        </svg> <span class="hidden md:block">Communities</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"
+                            class="invert w-6 h-6 r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                            <g>
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                </path>
+                            </g>
+                        </svg> <span class="hidden md:block">Premium</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+                        </svg> <span class="hidden md:block">Profile</span>
+                    </li>
+                    <li
+                        class="flex md:justify-start items-center gap-2 justify-center  md:w-fit text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M280-420q25 0 42.5-17.5T340-480q0-25-17.5-42.5T280-540q-25 0-42.5 17.5T220-480q0 25 17.5 42.5T280-420Zm200 0q25 0 42.5-17.5T540-480q0-25-17.5-42.5T480-540q-25 0-42.5 17.5T420-480q0 25 17.5 42.5T480-420Zm200 0q25 0 42.5-17.5T740-480q0-25-17.5-42.5T680-540q-25 0-42.5 17.5T620-480q0 25 17.5 42.5T680-420ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg> <span class="hidden md:block">More</span>
+                    </li>
+                    <!-- <li
+                        class="flex justify-start items-center gap-2 text-2xl hover:bg-gray-900 hover:cursor-pointer hover:rounded-full px-5 py-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
+                        </svg> Post
+                    </li> -->
+                    <li>
+                        <div class="button w-full text-center  ">
+                            <button
+                                class="hidden md:block bg-white px-20 rounded-full py-3 text-xl font-bold text-black m-3   hover:bg-gray-200 hover:cursor-pointer">Post</button>
+
+                            <button
+                                class="md:hidden bg-white px-0 rounded-full h-14 w-34 py-3 text-xl font-bold text-black m-3 -mx-4">
+                                <span class="w-full h-10 my-10 object-cover rounded-full "><svg
+                                        xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960"
+                                        width="53px" fill="#000000">
+                                        <path
+                                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                                    </svg></span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
+
+                <div class="userprofile w-full mt-18">
+
+
+                    <div
+                        class="item p-10 object-cover rounded-full items-center gap-2 flex justify-between hover:bg-gray-950 cursor-pointer">
+
+                        <div class="flex gap-3">
+
+                            <div class="p1">
+                                <img class="rounded-full cursor-pointer w-12 text-center"
+                                    src="https://pbs.twimg.com/profile_images/1673287602957594626/-mPsrmGn_400x400.jpg"
+                                    height="22px" width="48px" alt="sachin">
+                            </div>
+
+                            <div class="p2 hover:bg-gray">
+                                <div class="font-bold cursor-pointer">Ibtesam Ahmed</div>
+                                <div class="text-gray-600 cursor-pointer ">@Ibtesam11889868</div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="second w-full border-[1px] border-x-gray-600 border-y-black     font-bold">
+            <div class="top flex p-3 relative">
+
+                <div class="absolute w-16 h-1 rounded-full bg-blue-600 bottom-0 left-[19%]"></div>
+
+                <div
+                    class="left bg-red-4001 w-1/2 flex justify-center font-bold text-lg cursor-pointer hover:bg-gray-900">
+                    For you</div>
+                <div
+                    class="right bg-green-5001 w-1/2 flex justify-center font-bold text-lg cursor-pointer hover:bg-gray-900">
+                    Following</div>
+                <div class="setting cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                        <path
+                            d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                    </svg></div>
+            </div>
+            <div class="h-[1px] w-full bg-gray-700"></div>
+            <div class="whatishapp flex gap-4">
+                <div class="img m-2">
+
+                    <img class="w-20 h-15 object-cover rounded-full"
+                        src="https://pbs.twimg.com/profile_images/1673287602957594626/-mPsrmGn_400x400.jpg" alt="">
+                </div>
+                <input class="w-full h-7 my-7 text-xl bg-black outline-none text-white" type="text"
+                    placeholder="What’s happening?">
+            </div>
+
+            <div class="text-blue-600 flex items-center gap-1 w-full my-0.5 font-bold mx-14           md:container">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#2563EB">
+                    <path
+                        d="M472-159q-33 0-56.5-24T392-240q0-33 23.5-56.5T472-320l24-23q8-8 18.5-12.5T536-360q23 0 39.5 17t16.5 40v17q0 20 13 33t33 13q15 0 27-9t17-23l12-33q9-24 29-39.5t46-15.5q11-28 17.5-58t6.5-62q0-89-44.5-162.5T632-758v38q0 33-23.5 56.5T552-640h-40v80q0 17-11.5 28.5T472-520h-40v68q0 22-15 37t-37 15q-14 0-25.5-6T336-423l-64-97h-40v40q0 31-21 53t-50 26q26 104 112.5 173T472-159Zm80-241q-17 0-28.5-11.5T512-440q0-17 11.5-28.5T552-480h40q17 0 28.5 11.5T632-440q0 17-11.5 28.5T592-400h-40Zm93-120q-20 0-31.5-15.5T608-570l15-44q4-12 14-19t22-7q20 0 31.5 15.5T696-590l-15 44q-4 12-14 19t-22 7ZM472-80q-83 0-156-31.5T189-197q-54-54-85.5-127T72-480q0-83 31.5-156T189-763q54-54 127-85.5T472-880q83 0 156 31.5T755-763q54 54 85.5 127T872-480q0 83-31.5 156T755-197q-54 54-127 85.5T472-80Z" />
+                </svg>
+                <span>Everyone can reply</span> -->
+
+            </div>
+
+            <div class="blueicons flex mx-14 my-1 gap-8         "><svg class="cursor-pointer"
+                    xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#2563EB" fill-rule="evenodd" style="flex:none;line-height:1">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
+                </svg>
+                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill-rule="evenodd" style="flex:none;line-height:1" fill="#2563EB">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm240-160h60v-240h-60v240Zm-160 0h80q17 0 28.5-11.5T400-400v-80h-60v60h-40v-120h100v-20q0-17-11.5-28.5T360-600h-80q-17 0-28.5 11.5T240-560v160q0 17 11.5 28.5T280-360Zm280 0h60v-80h80v-60h-80v-40h120v-60H560v240ZM200-200v-560 560Z" />
+                </svg>
+                <svg class="cursor-pointer" fill="#2563EB" fill-rule="evenodd" height="24"
+                    style="flex:none;line-height:1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Grok</title>
+                    <path
+                        d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815">
+                    </path>
+                </svg>
+                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#2563EB" fill-rule="evenodd" style="flex:none;line-height:1">
+                    <path
+                        d="M480-560h200v-80H480v80Zm0 240h200v-80H480v80ZM360-520q33 0 56.5-23.5T440-600q0-33-23.5-56.5T360-680q-33 0-56.5 23.5T280-600q0 33 23.5 56.5T360-520Zm0 240q33 0 56.5-23.5T440-360q0-33-23.5-56.5T360-440q-33 0-56.5 23.5T280-360q0 33 23.5 56.5T360-280ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+                </svg>
+
+                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#2563EB" fill-rule="evenodd" style="flex:none;line-height:1">
+                    <path
+                        d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 260q68 0 123.5-38.5T684-400H276q25 63 80.5 101.5T480-260Zm0 180q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z" />
+                </svg>
+
+                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#2563EB" fill-rule="evenodd" style="flex:none;line-height:1">
+                    <path
+                        d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg>
+
+                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                    width="24px" fill="#2563EB" fill-rule="evenodd" style="flex:none;line-height:1">
+                    <path
+                        d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                </svg>
+
+
+                <button
+                    class=" bg-white px-8 rounded-full py-1 text-xl font-bold text-black my-[-5px] hover:bg-gray-200 hover:cursor-pointer hover:rounded-full">Post</button>
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="h-[1px] w-full bg-gray-700 my-4"></div>
+
+            <div class="posts">
+                <div class="post">
+                    <div class="post flex">
+                        <div class="image">
+                            <img class="w-15 h-12 mx-2 object-cover rounded-full"
+                                src="https://pbs.twimg.com/profile_images/1207939947337932800/jiCcUcoE_400x400.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="content">
+                            <span class="mx-3 hover:cursor-pointer">
+
+                                <span class="font-bold hover:underline">Vedhika</span>
+                                <span class="text-gray-600">@Vedhika4u</span>
+                                <span class="text-gray-600 hover:underline">
+
+                                    ·
+                                    19h
+                                </span>
+                            </span>
+                            <div class="mx-2.5 cursor-pointer">Ee Sala cup Namde 🏆🏏 Congratulations <span
+                                    class="hover:underline text-blue-400"> #RCB </span> Champions!
+                                <span class="hover:underline text-blue-400">@RCBTweets</span>
+                                <span class="hover:underline text-blue-400">@imVkohli</span>
+                                <span class="hover:underline text-blue-400">#TeamRCB</span>
+                            </div>
+
+                            <div class="postimg mx-2 m-3 ml-0">
+                                <img class="rounded-xl"
+                                    src="https://pbs.twimg.com/media/GsigwruasAAkLzE?format=jpg&name=900x900" alt="">
+                            </div>
+                            <span class="cursor-pointer hover:underline text-gray-600">12:01 AM · Jun 4, 2025 </span>
+                            <span class="font-bold">·
+                                489K</span> <span class="text-gray-600">
+                                Views</span>
+
+
+
+
+
+
+                            <div class="icons flex bg-black m-4 mx-3">
+                                <div class="icon flex items-center justify-center">
+
+                                    <svg class="hover:fill-blue-600  hover:rounded-full cursor-pointer"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                                    <span
+                                        class=" text-gray-600  hover:text-blue-600 cursor-pointer hover:rounded-full">128k</span>
+
+
+                                    <svg class="cursor-pointer mx-10   hover:fill-green-400  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-10     hover:text-green-400  hover:rounded-full">48k</span>
+
+                                    <svg class="cursor-pointer mx-20      hover:fill-red-600  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-20      hover:text-red-600  hover:rounded-full">52k</span>
+
+
+                                    <svg class="cursor-pointer mx-28     hover:fill-purple-500  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M80-120v-80h800v80H80Zm40-120v-280h120v280H120Zm200 0v-480h120v480H320Zm200 0v-360h120v360H520Zm200 0v-600h120v600H720Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-28    hover:text-purple-500  hover:rounded-full">4.2M</span>
+
+                                    <span></span>
+
+
+                                    <svg class="cursor-pointer mx-40    hover:fill-yellow-200  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z" />
+                                    </svg>
+
+                                    <svg class="cursor-pointer -mx-24      hover:fill-pink-300  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="h-[1px] w-full bg-gray-700 my-4"></div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="posttwo">
+                <div class="posttw00">
+                    <div class="postt flex">
+                        <div class="image">
+                            <img class="w-14 h-11 mx-2 object-cover rounded-full"
+                                src="https://pbs.twimg.com/profile_images/1770102655156682752/CFr2qRSJ_400x400.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="contentwo">
+                            <span class="mx-3 hover:cursor-pointer">
+
+                                <span class="font-bold hover:underline">Royal Challengers Bengaluru</span>
+                                <span class="text-gray-600">@RCBTweets</span>
+                                <span class="text-gray-600 hover:underline">·
+                                    22h
+                                </span>
+                            </span>
+
+                            <div class="mx-2.5 cursor-pointer">Ee Sala cup Namde 🏆🏏 Congratulations</div>
+
+                            <div class="postimg mx-2 m-3 ml-0">
+                                <img class="rounded-xl"
+                                    src="https://pbs.twimg.com/media/GsieSfEbgAAW9qb?format=jpg&name=medium" alt="">
+                            </div>
+                            <span class="cursor-pointer hover:underline text-gray-600">10:58 AM · Jun 3, 2025 </span>
+                            <span class="font-bold">·
+                                989K</span> <span class="text-gray-600">
+                                Views</span>
+
+
+
+
+                            <div class="icons flex bg-black m-4 mx-3">
+                                <div class="icon flex items-center justify-center">
+                                    <svg class="cursor-pointer      hover:fill-blue-600  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600     hover:text-blue-600  hover:rounded-full">5248k</span>
+
+
+                                    <svg class="cursor-pointer mx-10      hover:fill-green-400  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-10      hover:text-green-400  hover:rounded-full">56k</span>
+
+                                    <svg class="cursor-pointer mx-20   hover:fill-red-600  hover:rounded-full "
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-20         hover:text-red-600  hover:rounded-full">12k</span>
+
+
+                                    <svg class="cursor-pointer mx-28       hover:fill-purple-500  hover:rounded-full   "
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M80-120v-80h800v80H80Zm40-120v-280h120v280H120Zm200 0v-480h120v480H320Zm200 0v-360h120v360H520Zm200 0v-600h120v600H720Z" />
+                                    </svg>
+                                    <span
+                                        class="cursor-pointer text-gray-600 -mx-28       hover:text-purple-500  hover:rounded-full">6.2M</span>
+
+                                    <span></span>
+
+
+                                    <svg class="cursor-pointer mx-40      hover:fill-yellow-200  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z" />
+                                    </svg>
+
+                                    <svg class="cursor-pointer -mx-24      hover:fill-pink-300  hover:rounded-full"
+                                        xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#4B5563">
+                                        <path
+                                            d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="h-[1px] w-full bg-gray-700 my-4"></div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="third w-full bg-red-5044 hidden md:block">
+            <div class="search m-3">
+                <input type="text" class="w-full  rounded-full bg-gray-900 text-white px-2 py-2" placeholder="search">
+            </div>
+
+            <div class="whats sticky top-0 m-2 bg-[#16181c] w-full py-3 rounded-xl space-y-2">
+                <h1 class="text-xl font-bold px-3">What’s happening</h1>
+                <div class="item p-3 hover:bg-gray-800 cursor-pointer px-3">
+                    <div class="text-sm text-gray-600">Trending in India</div>
+                    <div class="font-bold">Postponed</div>
+                    <div class="text-sm text-gray-600">61K posts</div>
+                </div>
+
+
+
+                <div class="item p-3 hover:bg-gray-800 cursor-pointer px-3">
+                    <div class="text-sm text-gray-600">Sports · Trending</div>
+                    <div class="font-bold">#IPL2025Final</div>
+                    <div class="text-sm text-gray-600">3,226 posts</div>
+                </div>
+
+                <div class="item p-3 hover:bg-gray-800 cursor-pointer">
+                    <div class="text-sm text-gray-600">Sports · Trending</div>
+                    <div class="font-bold">Please God</div>
+                    <div class="text-sm text-gray-600">39.9K posts</div>
+                </div>
+
+                <div class="item p-3 hover:bg-gray-800 cursor-pointer">
+                    <div class="text-sm text-gray-600">Trending in India</div>
+                    <div class="font-bold">Unknown</div>
+                    <div class="text-sm text-gray-600">104K posts</div>
+                </div>
+
+                <div class="item p-3 hover:bg-gray-800 cursor-pointer">
+                    <div class="text-sm text-gray-600">Trending in India</div>
+                    <div class="font-bold">#earthquake</div>
+                    <div class="text-sm text-gray-600">81K posts</div>
+                </div>
+
+
+                <div class="text-blue-600 my-3 px-2 cursor-pointer">Show more</div>
+
+            </div>
+
+
+
+            <div class="who sticky top-0 z-10 m-3 bg-[#16181c] w-full py-4 rounded-xl space-y-3">
+                <h1 class="text-xl font-bold px-3">Who to follow</h1>
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full hover:cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1677636815606648832/axEaSSRr_400x400.jpg"
+                                height="42px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Sachin Tendulkar</div>
+                            <div class="text-gray-600 cursor-pointer">@sachin_rt</div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer">Follow</button>
+                    </div>
+
+
+
+                    <!-- 
+                    <div class="font-bold cursor-pointer">Rahul Gandhi</div>
+                    <div class="text-sm text-gray-600 cursor-pointer">@RahulGandhi</div>
+
+                    <div class="font-bold cursor-pointer">Yuvraj Singh</div>
+                    <div class="text-sm text-gray-600 cursor-pointer">@YUVSTRONG12</div>
+
+                    <div class="text-blue-600 my-3 px-2 cursor-pointer">Show more</div> -->
+                </div>
+
+
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1562753500726976514/EPSUNyR3_400x400.jpg"
+                                height="22px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Virat Kohli</div>
+                            <div class="text-gray-600 cursor-pointer">@imVkohli</div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer">Follow</button>
+                    </div>
+
+
+
+                    <!-- 
+                    <div class="font-bold cursor-pointer">Rahul Gandhi</div>
+                    <div class="text-sm text-gray-600 cursor-pointer">@RahulGandhi</div>
+
+                    <div class="font-bold cursor-pointer">Yuvraj Singh</div>
+                    <div class="text-sm text-gray-600 cursor-pointer">@YUVSTRONG12</div>
+
+                    <div class="text-blue-600 my-3 px-2 cursor-pointer">Show more</div> -->
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1565973835429875712/j8LDCSQW_400x400.jpg"
+                                height="22px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Rajinikanth</div>
+                            <div class="text-gray-600 cursor-pointer">@rajinikanth</div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer">Follow</button>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1676262308052447233/-Uqx1Bqn_400x400.jpg"
+                                height="22px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Kriti Sanon</div>
+                            <div class="text-gray-600 cursor-pointer">@kritisanon</div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer ">Follow</button>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1478025140978044938/vSk_Eurp_400x400.jpg"
+                                height="22px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Katrina Kaif Online</div>
+                            <div class="text-gray-600 cursor-pointer">@KatrinaKaifFB</div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer ">Follow</button>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="item p-2 px-3 items-center flex justify-between">
+
+
+
+                    <div class="flex gap-3">
+
+                        <div class="p1">
+                            <img class="rounded-full cursor-pointer"
+                                src="https://pbs.twimg.com/profile_images/1673287602957594626/-mPsrmGn_400x400.jpg"
+                                height="22px" width="48px" alt="sachin">
+                        </div>
+
+                        <div class="p2">
+                            <div class="font-bold hover:underline cursor-pointer">Ibtesam Ahmed</div>
+                            <div class="text-gray-600 cursor-pointer">@Ibtesam11889868</div>
+                        </div>
+
+
+                    </div>
+
+                    
+
+
+                            <div class="p3">
+                        <button
+                            class="text-black bg-white px-5 py-2 rounded-full font-bold hover:bg-gray-200 cursor-pointer ">Follow</button>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+
+                
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+</body>
+
+</html>
